@@ -48,8 +48,11 @@ module.exports = {
     //  network_id: "*",       // Any network (default: none)
     // },
     
-    develop: {
-      port: 8545
+  
+    development: {
+      host: "127.0.0.1",
+      port: 8545,
+      network_id: "*"
     },
 
     // Another network with more advanced options...
