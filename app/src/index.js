@@ -93,6 +93,7 @@ const App = {
 
     let result;
     try{ 
+      // call the token contract function
       result = await this.instance.getBalance(this.account, {from: this.account});
       console.log("Token balance is: ", result)
     } catch(error){
@@ -121,9 +122,7 @@ const App = {
 
     this.setStatus("Initiating transaction... (please wait)");
 
-    const { sendCoin } = this.meta.methods;
-    await sendCoin(receiver, amount).send({ from: this.account });
-
+    // do token transfer transaction here
     this.setStatus("Transaction complete!");
     this.refreshBalance();
   },
