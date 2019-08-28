@@ -39,6 +39,8 @@ const App = {
     
     // fetch network ID 
     await App.fetchNetworkId();
+
+    // Todo 0: Write a function here to refresh/show your Ether balance. Use the web3 SDK.
     
     // create a contract instance
     this.paymentContract = contract(metaCoinArtifact);
@@ -123,13 +125,22 @@ const App = {
   
 
   sendCoin: async function() {
-    const amount = parseInt(document.getElementById("amount").value);
-    const receiver = document.getElementById("receiver").value;
-
+    
     this.setStatus("Initiating transaction... (please wait)");
+    
+    
+    // Todos:
+    // 1. Do a token transaction here. Hints:
 
-    // do token transfer transaction here
+    // Read token amount and recipient, and call the contract function.
+    // See https://www.trufflesuite.com/docs/truffle/getting-started/interacting-with-your-contracts to find out how it works.
+
+
+    
     this.setStatus("Transaction complete!");
+
+
+    // 2. refresh the balance
     this.refreshBalance();
   },
 
