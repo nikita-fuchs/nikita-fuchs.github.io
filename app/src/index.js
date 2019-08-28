@@ -17,6 +17,12 @@ const App = {
 
 
     if (typeof window.web3 === 'undefined' || (typeof window.ethereum !== 'undefined')) {
+      try {
+        await ethereum.enable();
+      } catch(error) {
+        console.log("Metamask Permission denied: ", error)
+      }
+
       this.web3Provider = window.ethereum || window.web3;
       console.log(this.web3Provider);
       window.web3 = new Web3(this.web3Provider);
